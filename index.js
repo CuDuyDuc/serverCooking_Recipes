@@ -3,6 +3,7 @@ const cors = require('cors')
 const connectDB = require("./src/configs/connectDB")
 const errorMiddleHandle = require("./src/middlewares/errorMiddleWare")
 const authRouter = require("./src/routers/authRouter")
+const favouriteRouter = require("./src/routers/favouriteRouter")
 
 const app = express()
 app.use(cors())
@@ -12,6 +13,7 @@ app.use(errorMiddleHandle)
 const PORT = 3000
 
 app.use('/auth' ,authRouter)
+app.use('/favourite', favouriteRouter)
 
 connectDB()
 
